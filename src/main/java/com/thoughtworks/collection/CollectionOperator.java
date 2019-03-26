@@ -1,8 +1,5 @@
 package com.thoughtworks.collection;
 
-import com.sun.tools.javac.util.ArrayUtils;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

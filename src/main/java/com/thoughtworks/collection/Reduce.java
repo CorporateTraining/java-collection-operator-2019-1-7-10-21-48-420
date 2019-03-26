@@ -1,11 +1,7 @@
 package com.thoughtworks.collection;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-import sun.text.resources.ca.CollationData_ca;
-
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Reduce {
 
