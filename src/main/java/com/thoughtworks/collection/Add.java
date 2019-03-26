@@ -70,7 +70,7 @@ public class Add {
         Collections.sort(arrayList);
         double median;
         if (arrayList.size() % 2 == 0) {
-            median = (arrayList.get(arrayList.size() / 2 - 1) + arrayList.get(arrayList.size() / 2)) / 2;
+            median = (arrayList.get(arrayList.size() / 2 - 1) + arrayList.get(arrayList.size() / 2)) / 2.0;
         } else {
             median = arrayList.get(arrayList.size() / 2);
         }
