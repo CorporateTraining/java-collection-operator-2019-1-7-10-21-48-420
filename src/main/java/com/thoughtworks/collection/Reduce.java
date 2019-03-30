@@ -53,10 +53,7 @@ public class Reduce {
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
-        for (Integer item : arrayList) {
-            singleLink.addTailPointer(item);
-        }
-        if (arrayList.size() % 2 == 0) {
+        if (arrayList.size( ) % 2 == 0) {
             double number1 = Double.parseDouble(singleLink.getNode(arrayList.size() / 2).toString());
             double number2 = Double.parseDouble(singleLink.getNode(arrayList.size() / 2 + 1).toString());
             return (number1 + number2) / 2;
