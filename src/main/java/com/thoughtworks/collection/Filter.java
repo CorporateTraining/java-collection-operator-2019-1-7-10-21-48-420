@@ -26,18 +26,15 @@ public class Filter {
 
     public List<Integer> getCommonElements(List<Integer> firstList, List<Integer> secondList) {
         List<Integer> list = new ArrayList<>(firstList);
-        list.retainAll(secondList);
-        return list;
+        return list.stream().
+                filter(secondList::contains)
+                .collect(Collectors.toList());
     }
 
     public List<Integer> getDifferentElements() {
-        List<Integer> list = new ArrayList<>();
-        for(Integer arr : array){
-            if(!list.contains(arr)){
-                list.add(arr);
-            }
-        }
+        return array.stream()
+                .distinct()
+                .collect(Collectors.toList());
 
-        return list;
     }
 }

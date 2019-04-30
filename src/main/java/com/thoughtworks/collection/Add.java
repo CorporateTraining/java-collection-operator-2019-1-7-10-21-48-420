@@ -64,12 +64,15 @@ public class Add {
     }
 
     public double getMedianOfEven(List<Integer> arrayList) {
-        Collections.sort(arrayList);
+        List<Integer> list = arrayList.stream()
+                .filter(item -> item % 2 == 0)
+                .sorted()
+                .collect(Collectors.toList());
         double median;
-        if (arrayList.size() % 2 == 0) {
-            median = (arrayList.get(arrayList.size() / 2 - 1) + arrayList.get(arrayList.size() / 2)) / 2.0;
+        if (list.size() % 2 == 0) {
+            median = (list.get(list.size() / 2 - 1) + list.get(list.size() / 2)) / 2.0;
         } else {
-            median = arrayList.get(arrayList.size() / 2);
+            median = list.get(list.size() / 2);
         }
 
         return median;
@@ -77,7 +80,11 @@ public class Add {
 
     public double getAverageOfEven(List<Integer> arrayList) {
 
-        return arrayList.stream().mapToInt(Integer::byteValue).average().getAsDouble();
+        return arrayList.stream()
+                .filter(integer -> integer % 2 == 0)
+                .mapToInt(Integer::byteValue)
+                .average()
+                .getAsDouble();
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
