@@ -1,5 +1,6 @@
 package com.thoughtworks.collection;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -49,7 +50,7 @@ public class Reduce {
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        return this.arrayList.size() == arrayList.size() && this.arrayList.containsAll(arrayList);
+        return Arrays.deepEquals(this.arrayList.toArray(), arrayList.toArray());
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
