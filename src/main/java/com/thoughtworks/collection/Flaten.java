@@ -3,6 +3,7 @@ package com.thoughtworks.collection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Flaten {
 
@@ -13,24 +14,18 @@ public class Flaten {
     }
 
     public List<Integer> transformToOneDimesional() {
-        List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < array.length; i++) {
-            list.addAll(Arrays.asList(array[i]));
-        }
-        return list;
+        return Arrays.stream(array)
+                .flatMap(Arrays::stream)
+                .collect(Collectors.toList());
     }
 
     public List<Integer> transformToUnrepeatedOneDimesional() {
-        List<Integer> list = new ArrayList<>();
-        List<Integer> result = new ArrayList<>();
-        for (int i = 0; i < array.length; i++) {
-            list.addAll(Arrays.asList(array[i]));
-        }
-        for (Integer arr : list) {
-            if (!result.contains(arr)) {
-                result.add(arr);
-            }
-        }
-        return result;
+        List<Integer> list = Arrays.stream(array)
+                .flatMap(Arrays::stream)
+                .collect(Collectors.toList());
+
+        return list.stream()
+                .distinct()
+                .collect(Collectors.toList());
     }
 }

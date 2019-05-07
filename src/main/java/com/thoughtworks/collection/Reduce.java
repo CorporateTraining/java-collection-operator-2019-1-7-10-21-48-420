@@ -39,13 +39,13 @@ public class Reduce {
         return arrayList.stream().filter(item -> item % 2 == 0).findFirst().get();
     }
 
-    public int getIndexOfFirstEven() {
+    public int getIndexOfFirstEven() throws BusinessException {
         for (int i = 0; i < arrayList.size(); i++) {
-            if(arrayList.get(i) % 2 == 0){
+            if (arrayList.get(i) % 2 == 0) {
                 return i;
             }
         }
-        return 0;
+        throw new BusinessException("没有找到偶数下标");
     }
 
     public boolean isEqual(List<Integer> arrayList) {
@@ -53,7 +53,7 @@ public class Reduce {
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
-        if (arrayList.size( ) % 2 == 0) {
+        if (arrayList.size() % 2 == 0) {
             double number1 = Double.parseDouble(singleLink.getNode(arrayList.size() / 2).toString());
             double number2 = Double.parseDouble(singleLink.getNode(arrayList.size() / 2 + 1).toString());
             return (number1 + number2) / 2;
@@ -62,23 +62,24 @@ public class Reduce {
         }
     }
 
-    public int getLastOdd() {
-        int number = 0;
-        for (int i = 0; i < arrayList.size(); i++) {
-            if(arrayList.get(i) % 2 != 0){
-                number = arrayList.get(i);
+    public int getLastOdd() throws BusinessException {
+        for (int i = arrayList.size() - 1; i > 0; i++) {
+            if (arrayList.get(i) % 2 != 0) {
+                return arrayList.get(i);
             }
         }
-        return number;
+
+        throw new BusinessException("没有找到偶数下标");
     }
 
-    public int getIndexOfLastOdd() {
-        int index = 0;
-        for (int i = 0; i < arrayList.size(); i++) {
-            if(arrayList.get(i) % 2 != 0){
-                index = i;
+    public int getIndexOfLastOdd() throws BusinessException {
+
+        for (int i = arrayList.size() - 1; i > 0; i--) {
+            if (arrayList.get(i) % 2 != 0) {
+                return i;
             }
         }
-        return index;
+
+        throw new BusinessException("没有找到偶数下标");
     }
 }

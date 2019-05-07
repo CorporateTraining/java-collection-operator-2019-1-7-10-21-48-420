@@ -97,7 +97,7 @@ public class ReduceTest {
     }
 
     @Test
-    public void should_return_index_of_first_even_element() {
+    public void should_return_index_of_first_even_element() throws BusinessException {
         //获取数组中第一个偶数的下标
         Integer[] array = new Integer[]{1, 11, 27, 20, 4, 9, 15, 4, 1, 11};
         List<Integer> arrayList = Arrays.asList(array);
@@ -107,7 +107,7 @@ public class ReduceTest {
     }
 
     @Test
-    public void should_return_last_even_element() {
+    public void should_return_last_even_element() throws BusinessException {
         //获取数组中最后一个奇数
         Integer[] array = new Integer[]{1, 11, 27, 20, 4, 9, 15};
         List<Integer> arrayList = Arrays.asList(array);
@@ -117,7 +117,7 @@ public class ReduceTest {
     }
 
     @Test
-    public void should_return_index_of_last_even_element() {
+    public void should_return_index_of_last_even_element() throws BusinessException {
         //获取数组中最后一个奇数的下标
         Integer[] array = new Integer[]{1, 4, 27, 20, 4, 9, 15, 4, 1, 11};
         List<Integer> arrayList = Arrays.asList(array);

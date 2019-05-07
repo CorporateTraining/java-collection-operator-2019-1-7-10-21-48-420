@@ -110,9 +110,14 @@ public class Add {
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
 
         Collections.sort(arrayList);
-        List<Integer> list = arrayList.stream().filter(item -> item % 2 == 0).collect(Collectors.toList());
+        List<Integer> list = arrayList.stream()
+                .filter(item -> item % 2 == 0)
+                .collect(Collectors.toList());
+
         Collections.reverse(arrayList);
-        list.addAll(arrayList.stream().filter(item -> item % 2 != 0).collect(Collectors.toList()));
+        list.addAll(arrayList.stream()
+                .filter(item -> item % 2 != 0)
+                .collect(Collectors.toList()));
 
         return list;
     }
